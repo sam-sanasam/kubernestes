@@ -7,7 +7,7 @@ $ kubectl rollout status deployment/deployment.yml
 $ kubectl rollout hisory deployment/deploymentyyml
 $ kubectl rollout undo deployment/deployment.yml
 
-
+```
 
 First, we will try to differentiate between ReplicaSet and Deployment
 
