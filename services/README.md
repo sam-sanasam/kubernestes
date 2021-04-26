@@ -27,3 +27,47 @@ spec:
       
       
    ```
+
+
+### CLusterIP
+
+```sh
+apiVersion: vi
+kind: Service
+metadata: 
+  name: webapp-clusterIp
+spec:
+  type: ClusterIP
+  ports:
+    - targetPort: 80
+      port: 80
+selector:
+   name: frontend
+   
+   ```
+   
+   
+   
+   
+   ### LoadBalancer
+   Below is the simple example for explaingnthe load balancer service in kubernetes.
+   ![image](https://user-images.githubusercontent.com/68118215/116077098-b2dab800-a6b2-11eb-9224-14bf194a3443.png)
+Here, if we use other services like nodeport and cluster Ip, it will give multiple url addresses to access the repective port which is not favourable for the user.
+We we need to create a Vm in-inbetweenthe User and the Kubernetes cluster and configure it to act like a load balancer. However this is very tedius job.
+So we create a service called **Loadbalancer** in the kubernetes cluster to distribute the load .
+
+```sh
+apiVersion: v1
+kind: Service
+metadata:
+ name: loadbalcer-service
+spec:
+  type: LoadBlancer
+  ports:
+    - tagetPort: 80
+      port: 80
+ selector:
+   name: frontend
+   
+   
+```
