@@ -22,6 +22,8 @@ spec:
     - targetPod: 80   # port on the target pod
       port: 80        # port on the service
       nodePort: 30008 
+  selector:           # this is used to link to the pod. "Type: frontend " is the lebels defined in the pod definition
+    type: frontend    
       
       
    ```
