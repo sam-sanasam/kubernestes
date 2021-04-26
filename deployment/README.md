@@ -1,3 +1,14 @@
+### useful commands
+```c
+$ kubectl create -f deployment.yml
+$ kubectl get deployment
+$ kubectl apply -f deployment.yml
+$ kubectl rollout status deployment/deployment.yml
+$ kubectl rollout hisory deployment/deploymentyyml
+$ kubectl rollout undo deployment/deployment.yml
+
+
+
 First, we will try to differentiate between ReplicaSet and Deployment
 
 A ReplicaSet ensures that a specified number of pod replicas are running at any given time.\
@@ -10,7 +21,7 @@ unless we require custom update orchestration or don't require updates at all.
 This actually means that you may never need to manipulate ReplicaSet objects: use a Deployment instead, and define your application in the spec section.
 
 >>> deployment-definition.yml 
-```c
+```sh
 apiVersion: app/v1
 kind: Deployment
 metadata:
