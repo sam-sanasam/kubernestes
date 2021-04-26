@@ -1,0 +1,11 @@
+apiVersion: vi
+kind: Service
+metadata: 
+  name: webapp-clusterIp
+spec:
+  type: ClusterIP
+  ports:
+    - targetPort: 80
+      port: 80
+selector:
+   name: frontend
